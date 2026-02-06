@@ -1,9 +1,89 @@
-<header class="flex justify-center items-center py-5 w-[1120px] mx-auto">
-    <nav class="flex flex-row gap-x-10 opacity-80">
-        <a href="#home">Home</a>
-        <a href="#experience">Experience</a>
-        <a href="#projects">Projects</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
+<header
+    class="flex justify-between md:justify-center items-center py-5 mx-auto px-4 w-full lg:w-[740px]"
+>
+    <nav class="hidden md:flex flex-row gap-x-10 opacity-80 text-base">
+        <a href="#home" class="hover:text-yellow-200 transition-colors">Home</a>
+        <a href="#experience" class="hover:text-yellow-200 transition-colors"
+            >Experience</a
+        >
+        <a href="#projects" class="hover:text-yellow-200 transition-colors"
+            >Projects</a
+        >
+        <a href="#about" class="hover:text-yellow-200 transition-colors"
+            >About</a
+        >
+        <a href="#contact" class="hover:text-yellow-200 transition-colors"
+            >Contact</a
+        >
     </nav>
+
+    <!-- Hamburger Button -->
+    <button
+        id="menu-toggle"
+        class="md:hidden flex flex-col justify-center items-center w-8 h-8 space-y-1.5 focus:outline-none z-50"
+        aria-label="Toggle menu"
+    >
+        <span class="w-6 h-0.5 bg-white transition-all duration-300"></span>
+        <span class="w-6 h-0.5 bg-white transition-all duration-300"></span>
+        <span class="w-6 h-0.5 bg-white transition-all duration-300"></span>
+    </button>
+
+    <!-- Mobile Menu Overlay -->
+    <div
+        id="mobile-menu"
+        class="fixed inset-0 bg-neutral-950/90 backdrop-blur-md z-40 transform translate-x-full transition-transform duration-300 flex flex-col items-center justify-center space-y-8 text-2xl"
+    >
+        <a
+            href="#home"
+            class="mobile-link hover:text-yellow-200 transition-colors">Home</a
+        >
+        <a
+            href="#experience"
+            class="mobile-link hover:text-yellow-200 transition-colors"
+            >Experience</a
+        >
+        <a
+            href="#projects"
+            class="mobile-link hover:text-yellow-200 transition-colors"
+            >Projects</a
+        >
+        <a
+            href="#about"
+            class="mobile-link hover:text-yellow-200 transition-colors">About</a
+        >
+        <a
+            href="#contact"
+            class="mobile-link hover:text-yellow-200 transition-colors"
+            >Contact</a
+        >
+    </div>
 </header>
+
+<script>
+    const menuToggle = document.getElementById("menu-toggle");
+    const mobileMenu = document.getElementById("mobile-menu");
+    const mobileLinks = document.querySelectorAll(".mobile-link");
+    const spans = menuToggle?.querySelectorAll("span");
+
+    function toggleMenu() {
+        mobileMenu?.classList.toggle("translate-x-full");
+        document.body.classList.toggle("overflow-hidden");
+
+        // Hamburger animation
+        if (spans) {
+            spans[0].classList.toggle("rotate-45");
+            spans[0].classList.toggle("translate-y-2");
+            spans[1].classList.toggle("opacity-0");
+            spans[2].classList.toggle("-rotate-45");
+            spans[2].classList.toggle("-translate-y-2");
+        }
+    }
+
+    menuToggle?.addEventListener("click", toggleMenu);
+
+    mobileLinks.forEach((link) => {
+        link.addEventListener("click", () => {
+            toggleMenu();
+        });
+    });
+</script>
