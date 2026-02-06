@@ -10,6 +10,8 @@ import Section from "../components/Section.astro";
 import Briefcase from "../components/icons/Briefcase.astro";
 import Projects from "../components/Projects.astro";
 import Code from "../components/icons/Code.astro";
+import About from "../components/About.astro";
+import MeIcon from "../components/icons/MeIcon.astro";
 ---
 
 <Layout
@@ -17,7 +19,7 @@ import Code from "../components/icons/Code.astro";
     description="Desarrollador Web"
 >
     <main>
-        <Section class="py-20 md:py-44 pb-22">
+        <Section>
             <img
                 class="rounded-full size-12 mb-10"
                 src="https://lh3.googleusercontent.com/a/ACg8ocJcMSszPb5ubXrSSZDgnEoXiPC8fQKJhjU5Ji6lO8I-zu_DsO8HvQ=s288-c-no"
@@ -69,11 +71,23 @@ import Code from "../components/icons/Code.astro";
         </Section>
 
         <Section id="projects">
-            <h2 class="text-2xl font-semibold mb-6 flex gap-x-3 items-center">
+            <h2
+                class="text-2xl font-semibold mb-6 flex gap-x-3 items-center py-3"
+            >
                 <Code class="size-7" />
                 Projects
             </h2>
             <Projects />
         </Section>
+
+        <!-- <Section id="about">
+            <h2
+                class="text-2xl font-semibold mb-6 flex gap-x-3 items-center py-3"
+            >
+                <MeIcon class="size-7" />
+                About Me...
+            </h2>
+            <About />
+        </Section> -->
     </main>
 </Layout>

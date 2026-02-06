@@ -1,7 +1,6 @@
 ---
 import GitHub from "./icons/GitHub.astro";
 import Web from "./icons/Web.astro";
-import Linkedin from "./icons/linkedin.astro";
 import Social from "./Social.astro";
 
 const PROJECTS = [
@@ -11,16 +10,14 @@ const PROJECTS = [
             "Eukaria App is a Project for a company especializada en producto relacionados a los animales.",
         link: "https://eukariae.vercel.app/",
         github: "https://github.com/EdOliveros/Eukariae",
-        image: "https://files.worldwildlife.org/wwfcmsprod/images/DUPLICATE_blue_whale/story_full_width/1gbugt0fxl_Small_WW2154941.jpg",
         tags: ["tag1", "tag2", "tag3"],
     },
     {
         title: "Eukariae API",
         description:
             "Eukaria App is a Project for a company especializada en producto relacionados a los animales.",
-        link: "https://eukariae.vercel.app/",
+        link: "https://eukariae-api.onrender.com/admin/login",
         github: "https://github.com/EdOliveros/Eukariae-API",
-        image: "https://files.worldwildlife.org/wwfcmsprod/images/DUPLICATE_blue_whale/story_full_width/1gbugt0fxl_Small_WW2154941.jpg",
         tags: ["tag1", "tag2", "tag3"],
     },
     {
@@ -29,7 +26,14 @@ const PROJECTS = [
             "Eukaria App is a Project for a company especializada en producto relacionados a los animales.",
         link: "https://edoliveros.github.io/WeatherApp/",
         github: "https://github.com/EdOliveros/WeatherApp",
-        image: "https://files.worldwildlife.org/wwfcmsprod/images/DUPLICATE_blue_whale/story_full_width/1gbugt0fxl_Small_WW2154941.jpg",
+        tags: ["tag1", "tag2", "tag3"],
+    },
+    {
+        title: "Primordial App",
+        description:
+            "Primordial is a Project for a company especializada en producto relacionados a los animales.",
+        link: "https://primordial-two.vercel.app/",
+        github: "https://github.com/EdOliveros/Primordial",
         tags: ["tag1", "tag2", "tag3"],
     },
 ];
@@ -37,7 +41,7 @@ const PROJECTS = [
 
 {
     PROJECTS.map((project) => (
-        <article class="flex flex-col items-stretch bg-neutral-primary-soft p-6 border border-white/10 rounded-2xl shadow-xl md:flex-row md:max-w-4xl gap-8 mb-8 transition-all hover:border-white/20">
+        <article class="flex flex-col items-stretch bg-neutral-primary-soft p-6 border border-white/10 rounded-2xl shadow-xl md:flex-row md:max-w-4xl gap-8 mb-8 transition-all hover:border-white/20 ml-4">
             <a
                 href={project.link}
                 target="_blank"
@@ -56,13 +60,13 @@ const PROJECTS = [
                     href={project.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    class="hover:underline decoration-primary"
+                    class="decoration-primary"
                 >
-                    <h5 class="mb-4 text-3xl font-bold tracking-tight text-white">
+                    <h2 class="text-2xl font-semibold mb-6 flex gap-x-3 items-center">
                         {project.title}
-                    </h5>
+                    </h2>
                 </a>
-                <p class="mb-6 text-gray-300 text-lg leading-relaxed">
+                <p class="mb-6 text-gray-300 text-lg leading-relaxed text-pretty">
                     {project.description}
                 </p>
                 <div class="flex flex-wrap gap-4 items-center">
